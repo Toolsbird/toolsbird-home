@@ -1,179 +1,101 @@
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  background: #fffaf6;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #fffbf8;
   color: #1f2937;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER */
+/* ==========================================
+   HEADER
+   ========================================== */
+
 .top-header {
-  padding: 22px 64px;
+  padding: 24px 64px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 251, 248, 0.8);
 }
 
 .brand {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-/* HERO LAYOUT */
+/* ==========================================
+   HERO LAYOUT
+   ========================================== */
+
 .hero {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   min-height: calc(100vh - 80px);
+  gap: 0;
 }
 
-/* LEFT SIDE */
+/* ==========================================
+   LEFT SIDE - CONTENT
+   ========================================== */
+
 .hero-left {
-  padding: 90px 80px 80px 64px;
+  padding: 100px 80px 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pill {
   display: inline-block;
-  background: #fde6d9;
+  background: linear-gradient(135deg, #fef3e2 0%, #fed7aa 100%);
   color: #9a3412;
-  padding: 6px 16px;
+  padding: 8px 18px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.1);
+  width: fit-content;
 }
 
 .hero-left h1 {
-  font-size: 44px;
+  font-size: 52px;
   line-height: 1.15;
-  margin: 0;
+  margin: 0 0 24px 0;
+  font-weight: 800;
+  letter-spacing: -1.5px;
 }
 
 .hero-left h1 span {
-  color: #ea580c;
-}
-
-.tagline {
-  margin: 14px 0 18px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #9a3412;
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .description {
-  max-width: 520px;
+  max-width: 540px;
   font-size: 18px;
-  color: #4b5563;
-  margin-bottom: 32px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 36px;
 }
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
 
 .actions {
   display: flex;
-  gap: 14px;
+  gap: 16px;
 }
 
 .primary-btn {
-  background: #ea580c;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.secondary-btn {
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  color: #111827;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* RIGHT SIDE */
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-
-/* EXACT-STYLE VISUAL */
-.visual-layer {
-  position: absolute;
-  inset: 0;
-  background:
-    /* vertical translucent bars */
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,0.25) 0px,
-      rgba(255,255,255,0.25) 40px,
-      rgba(255,255,255,0.05) 41px,
-      rgba(255,255,255,0.05) 80px
-    ),
-    /* glowing orb */
-    radial-gradient(
-      circle at 55% 55%,
-      rgba(255,120,40,0.9),
-      rgba(220,38,38,0.95) 55%,
-      rgba(160,20,20,1) 75%,
-      rgba(120,15,15,1) 100%
-    ),
-    /* base gradient */
-    linear-gradient(
-      to right,
-      #fff1e6 0%,
-      #fbbf8f 35%,
-      #ea580c 60%,
-      #991b1b 100%
-    );
-}
-
-/* CARDS */
-.cards {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tool-card {
-  background: rgba(255,255,255,0.95);
-  padding: 24px 26px;
-  border-radius: 18px;
-  box-shadow: 0 22px 45px rgba(0,0,0,0.22);
-  max-width: 320px;
-}
-
-.tool-card h3 {
-  margin: 0 0 8px;
-}
-
-.tool-card p {
-  font-size: 14px;
-  color: #374151;
-}
-
-.tool-card a {
-  font-weight: 600;
-  color: #ea580c;
-  text-decoration: none;
-}
-
-.tool-card.featured {
-  border: 2px solid #fb923c;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-left {
-    padding: 50px 30px;
-  }
-
-  .hero-right {
-    height: 420px;
-  }
-}
+  background: li
