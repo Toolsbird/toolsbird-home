@@ -1,6 +1,13 @@
 /* ==========================================
    GLOBAL STYLES
    ========================================== */
+:root {
+  --primary-orange: #ea580c;
+  --primary-gradient: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  --bg-color: #fffbf8;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+}
 
 * {
   box-sizing: border-box;
@@ -9,93 +16,325 @@
 body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: #fffbf8;
-  color: #1f2937;
+  background: var(--bg-color);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* ==========================================
    HEADER
    ========================================== */
-
 .top-header {
-  padding: 24px 64px;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 251, 248, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 64px;
+  z-index: 10;
+  background: transparent;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  position: relative;
+}
+
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
 }
 
 .brand {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
+  color: var(--text-main);
   letter-spacing: -0.5px;
 }
 
 /* ==========================================
    HERO LAYOUT
    ========================================== */
-
 .hero {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  min-height: calc(100vh - 80px);
-  gap: 0;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* ==========================================
    LEFT SIDE - CONTENT
    ========================================== */
-
 .hero-left {
-  padding: 100px 80px 80px 64px;
+  padding: 140px 80px 80px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 5;
+  background: var(--bg-color); /* Ensures text sits on top nicely */
 }
 
+/* The Pill Badge */
 .pill {
-  display: inline-block;
-  background: linear-gradient(135deg, #fef3e2 0%, #fed7aa 100%);
-  color: #9a3412;
-  padding: 8px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+  padding: 6px 16px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 28px;
-  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.1);
+  margin-bottom: 32px;
   width: fit-content;
+  box-shadow: 0 2px 10px rgba(234, 88, 12, 0.05);
 }
 
+.pill .dot {
+  width: 8px;
+  height: 8px;
+  background: #ea580c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #ffedd5;
+}
+
+/* Typography */
 .hero-left h1 {
-  font-size: 52px;
-  line-height: 1.15;
+  font-size: 64px;
+  line-height: 1.1;
   margin: 0 0 24px 0;
   font-weight: 800;
-  letter-spacing: -1.5px;
+  letter-spacing: -2px;
+  color: #1f2937;
 }
 
 .hero-left h1 span {
-  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  color: #ea580c; /* Simple orange fallback */
+  background: linear-gradient(135deg, #ea580c 0%, #ef4444 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .description {
-  max-width: 540px;
+  max-width: 500px;
   font-size: 18px;
-  color: #6b7280;
-  line-height: 1.7;
-  margin-bottom: 36px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 42px;
+  font-weight: 400;
 }
 
-/* ==========================================
-   BUTTONS
-   ========================================== */
-
+/* Buttons */
 .actions {
   display: flex;
   gap: 16px;
+  margin-bottom: 80px;
 }
 
 .primary-btn {
-  background: li
+  background: var(--primary-orange);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+}
+
+.secondary-btn {
+  background: white;
+  color: var(--text-muted);
+  border: 1px solid #e5e7eb;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  border-color: var(--primary-orange);
+  color: var(--primary-orange);
+}
+
+/* Integrations Footer */
+.integrations {
+  margin-top: auto;
+}
+.integrations span {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+.logos {
+  display: flex;
+  gap: 24px;
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+.logo-text {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+}
+
+/* ==========================================
+   RIGHT SIDE - THE VISUAL ART
+   ========================================== */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  /* This creates the fade from white to art */
+  background: linear-gradient(90deg, #fffbf8 0%, rgba(255,251,248,0) 20%);
+}
+
+/* 1. The Glowing Orb Background */
+.orb {
+  position: absolute;
+  width: 70vh;
+  height: 70vh;
+  background: radial-gradient(circle, #ff5e00 0%, #dc2626 60%, transparent 80%);
+  border-radius: 50%;
+  top: 50%;
+  left: 40%; /* Position slightly off-center */
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* 2. The Glass Strips Layout */
+.glass-strips {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 2;
+  /* Mask to fade out edges smoothly if needed */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* 3. Individual Strips */
+.strip {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px); /* THE KEY: Makes the orb blurry behind strips */
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* Strip Variations for Depth */
+.strip:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px);
+}
+.strip:nth-child(odd) {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px);
+}
+.strip:nth-child(3), .strip:nth-child(4) {
+    /* Center strips are clearer to show the intense color */
+    backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+   FLOATING CARD (Integrated into Art)
+   ========================================== */
+.cards {
+    position: absolute;
+    bottom: 80px;
+    left: 10%;
+    z-index: 10;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    max-width: 300px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-icon {
+    font-size: 24px;
+    background: #fff;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.tool-card h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #111;
+}
+
+.tool-card p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #666;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-right {
+    display: none; /* Hide art on mobile or stack it */
+  }
+  .hero-left {
+    padding: 100px 32px;
+    text-align: center;
+    align-items: center;
+  }
+  .description {
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
