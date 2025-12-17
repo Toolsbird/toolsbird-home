@@ -89,7 +89,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: top;
+  justify-content: centre;
 }
 
 /* CARDS */
