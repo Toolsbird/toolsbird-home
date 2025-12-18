@@ -1,11 +1,10 @@
-body {
+html {
     background: white;
 }
 
-html {
-    background: linear-gradient(to right, white 50%, #E65100 50%);
-    background-attachment: fixed;
-    min-height: 100vh;
+body {
+    background: white;
+    position: relative;
 }
 
 .container {
@@ -161,18 +160,18 @@ h1 {
 .hero-right {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     position: relative;
-    padding: 40px;
+    padding: 10px 40px 40px 40px;
 }
 
 .hero-right::before {
     content: '';
     position: fixed;
     top: 0;
-    right: 0;
-    width: 50%;
+    right: -1px;
+    width: 50vw;
     height: 100%;
     background: #E65100;
     z-index: -2;
@@ -183,8 +182,8 @@ h1 {
     content: '';
     position: fixed;
     top: 0;
-    right: 0;
-    width: 50%;
+    right: -1px;
+    width: 50vw;
     height: 100%;
     background: 
         radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
@@ -203,6 +202,17 @@ h1 {
     perspective: 1000px;
     position: relative;
     z-index: 1;
+}
+
+.tools-section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .tool-card {
@@ -301,6 +311,13 @@ h1 {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-right::before,
+    .hero-right::after {
+        width: 50%;
+    }
+}
+
 @media (max-width: 992px) {
     .hero .container {
         flex-direction: column;
@@ -314,10 +331,21 @@ h1 {
         align-items: center;
     }
     
+    .hero-right {
+        padding: 20px;
+    }
+    
+    .hero-right::before,
+    .hero-right::after {
+        width: 100%;
+        border-radius: 20px;
+    }
+    
     .subtitle {
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+        font-size: 16px;
     }
     
     .cta-buttons {
@@ -327,6 +355,7 @@ h1 {
     .badge {
         margin-left: auto;
         margin-right: auto;
+        font-size: 16px;
     }
     
     h1 {
@@ -335,10 +364,21 @@ h1 {
     
     .tool-showcase {
         max-width: 100%;
+        width: 90%;
     }
     
     .tool-card {
         transform: none;
+        padding: 18px;
+        font-size: 16px;
+    }
+    
+    .card-header h3 {
+        font-size: 22px;
+    }
+    
+    .card-subtitle {
+        font-size: 16px;
     }
     
     .card-header {
@@ -356,42 +396,252 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .logo {
+        font-size: 20px;
+    }
+    
     .nav-menu {
-        gap: 15px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu a {
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
     
     h1 {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .badge {
+        font-size: 14px;
+        padding: 6px 12px;
+        margin-bottom: 15px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
     }
     
     .cta-buttons {
         flex-direction: column;
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 0 auto;
     }
     
     .btn-primary, .btn-secondary {
         text-align: center;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    .tool-showcase {
+        width: 100%;
+    }
+    
+    .tool-card {
+        padding: 16px;
+        font-size: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header h3 {
+        font-size: 18px;
+    }
+    
+    .card-subtitle {
+        font-size: 14px;
+    }
+    
+    .download-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .hero-right {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .hero-right::before,
+    .hero-right::after {
+        width: 100vw;
+        right: -50vw;
     }
 }
 
 @media (max-width: 576px) {
+    .top-bar {
+        padding: 15px 0;
+    }
+    
     .top-bar .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 18px;
     }
     
     .nav-menu {
+        width: 100%;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 8px;
     }
     
-    h1 {
-        font-size: 32px;
+    .nav-menu a {
+        font-size: 12px;
+    }
+    
+    .nav-btn {
+        padding: 6px 14px;
+        font-size: 12px;
     }
     
     .hero {
-        padding-top: 120px;
+        padding-top: 110px;
+        min-height: auto;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .badge {
+        font-size: 12px;
+        padding: 5px 10px;
+        margin-bottom: 12px;
+    }
+    
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    
+    .cta-buttons {
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .tool-showcase {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .tool-card {
+        padding: 14px;
+        font-size: 13px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card-header {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .card-icon {
+        font-size: 32px;
+    }
+    
+    .card-header h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .card-subtitle {
+        font-size: 12px;
+    }
+    
+    .browser-links {
+        margin-top: 15px;
+        gap: 8px;
+    }
+    
+    .download-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .hero-right {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .hero-right::before,
+    .hero-right::after {
+        width: 100vw;
+        right: -50vw;
+        border-radius: 15px;
+    }
+    
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .footer p {
+        font-size: 12px;
+    }
+    
+    .footer-links a {
+        font-size: 12px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .top-bar {
+        padding: 12px 0;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .badge {
+        font-size: 11px;
+    }
+    
+    .subtitle {
+        font-size: 12px;
+    }
+    
+    .tool-card {
+        padding: 12px;
+        font-size: 12px;
+    }
+    
+    .card-header h3 {
+        font-size: 14px;
+    }
+    
+    .hero-right::before,
+    .hero-right::after {
+        width: 100vw;
+        right: -50vw;
     }
 }
