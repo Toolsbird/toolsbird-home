@@ -1,68 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolsBird - Utility Platform</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ToolsBird - Your OneStop Utility Tools Platform</title>
+    <meta name="description"
+        content="Simple tools to simplify everyday tasks and work. Get more done in less time with our collection of productivity boosters.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header class="top-bar">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <div class="logo">ToolsBird</div>
-            <nav class="nav-menu">
-                <a href="#" class="nav-btn">Home</a>
-                <a href="#">Tools</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-            </nav>
+            <div class="header-content">
+                <div class="logo">ToolsBird</div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#tools" class="nav-link">Tools</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <section class="hero-left">
-                <span class="badge">🚀 Toolsbird — Simple tools, Quality results</span>
-                <h1>Your OneStop <br> <span class="highlight">Utility Tools Platform</span></h1>
-                <p class="subtitle">Simple tools to simplify everyday tasks and work. Get more done in less time with our collection of productivity boosters.</p>
-                
-                <div class="cta-buttons">
-                    <a href="#" class="btn-primary">Explore Tools</a>
-                
-                </div>
-            </section>
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="tagline">
+                        <span class="rocket-icon">🚀</span>
+                        <span>Toolsbird — Simple tools, Quality results</span>
+                    </div>
 
-            <section class="hero-right">
-                <div class="tool-showcase">
-                    <h2 class="tools-section-title">Latest Tools</h2>
-                    <div class="tool-card">
-                        <div class="card-header">
-                            <span class="card-icon">🍱</span>
-                            <div>
-                                <h3>Browser Calculator Extension</h3>
-                                <p class="card-subtitle">Quick calculations without leaving your tab</p>
-                            </div>
-                        </div>
-                        <div class="browser-links">
-                            <a href="#" class="download-btn">Chrome</a>
-                            <a href="#" class="download-btn">Edge</a>
-                            <a href="#" class="download-btn">Firefox</a>
+                    <h1 class="hero-title">
+                        Your OneStop<br>
+                        <span class="hero-title-accent">Utility Tools Platform</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Simple tools to simplify everyday tasks and work. Get more done in less time with our collection
+                        of productivity boosters.
+                    </p>
+
+                    <div class="cta-with-bird">
+                        <button class="cta-button">
+                            Explore Tools
+                            <span class="button-arrow">→</span>
+                        </button>
+
+                        <div class="bird-illustration">
+                            <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Bird Body -->
+                                <ellipse cx="180" cy="120" rx="60" ry="35" fill="url(#birdGradient)" />
+
+                                <!-- Bird Head -->
+                                <circle cx="140" cy="100" r="28" fill="url(#birdGradient)" />
+
+                                <!-- Eye -->
+                                <circle cx="135" cy="95" r="6" fill="white" />
+                                <circle cx="137" cy="93" r="3" fill="#2c3e50" />
+
+                                <!-- Beak pointing left/up toward button -->
+                                <path class="beak" d="M 115 100 Q 95 95 90 100 Q 95 105 115 110 Z" fill="#ff6b35" />
+
+                                <!-- Wings -->
+                                <g class="wing wing-1">
+                                    <path
+                                        d="M 210 110 Q 250 85 270 70 Q 275 67 278 72 Q 270 80 240 100 Q 215 115 210 120 Z"
+                                        fill="url(#wingGradient)" opacity="0.9" />
+                                </g>
+                                <g class="wing wing-2">
+                                    <path
+                                        d="M 215 113 Q 260 90 285 78 Q 290 76 292 81 Q 285 88 250 108 Q 220 120 215 125 Z"
+                                        fill="url(#wingGradient)" opacity="0.8" />
+                                </g>
+                                <g class="wing wing-3">
+                                    <path
+                                        d="M 220 116 Q 270 95 295 85 Q 300 83 302 88 Q 295 95 260 115 Q 225 128 220 130 Z"
+                                        fill="url(#wingGradient)" opacity="0.7" />
+                                </g>
+
+                                <!-- Tail -->
+                                <path d="M 230 125 Q 255 132 265 138 L 262 142 Q 250 136 230 130 Z"
+                                    fill="url(#birdGradient)" />
+
+                                <!-- Legs -->
+                                <line x1="170" y1="150" x2="168" y2="165" stroke="#ff6b35" stroke-width="2.5" />
+                                <line x1="185" y1="150" x2="187" y2="165" stroke="#ff6b35" stroke-width="2.5" />
+
+
+
+                                <!-- Gradients -->
+                                <defs>
+                                    <linearGradient id="birdGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#f7931e;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#fdc830;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#fdc830;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </main>
 
+                <div class="hero-right">
+                    <div class="tools-preview">
+                        <div class="tool-card-preview">
+                            <div class="tool-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="3" width="7" height="7" rx="1" fill="white" />
+                                    <rect x="3" y="14" width="7" height="7" rx="1" fill="white" />
+                                    <rect x="14" y="3" width="7" height="7" rx="1" fill="white" />
+                                    <rect x="14" y="14" width="7" height="7" rx="1" fill="white" />
+                                </svg>
+                            </div>
+                            <div class="tool-info">
+                                <h3>Browser Calculator Extension</h3>
+                                <p>Browser-based calculator for screen goals</p>
+                            </div>
+                        </div>
+
+                        <div class="tool-card-preview">
+                            <div class="tool-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2" />
+                                    <circle cx="8" cy="8" r="1.5" fill="white" />
+                                    <path d="M3 15l5-5 4 4 6-6 3 3" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="tool-info">
+                                <h3>Screenshot Tool</h3>
+                                <p>Browserhg shot for effortless shoutls</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Tools Collection</h2>
+                <p class="section-description">Powerful utilities designed to boost your productivity</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="7" height="7" rx="1" fill="currentColor" />
+                            <rect x="3" y="14" width="7" height="7" rx="1" fill="currentColor" />
+                            <rect x="14" y="3" width="7" height="7" rx="1" fill="currentColor" />
+                            <rect x="14" y="14" width="7" height="7" rx="1" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3 class="tool-card-title">Browser Calculator Extension</h3>
+                    <p class="tool-card-description">Browser-based calculator for screen goals</p>
+                    <a href="#" class="tool-card-link">Try Now →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" />
+                            <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+                            <path d="M3 15l5-5 4 4 6-6 3 3" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="tool-card-title">Screenshot Tool</h3>
+                    <p class="tool-card-description">Browserhg shot for effortless shoutls</p>
+                    <a href="#" class="tool-card-link">Try Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2025 ToolsBird. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">ToolsBird</div>
+                    <p>Simple tools, Quality results</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#tools">Tools</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#about">About</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ToolsBird. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
