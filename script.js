@@ -86,12 +86,9 @@ function updateParallax() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
     
-    if (hero) {
-        const parallaxElement = hero.querySelector('::before');
-        if (parallaxElement) {
+        if (hero) {
             hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
-    }
     
     ticking = false;
 }
