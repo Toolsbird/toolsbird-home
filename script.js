@@ -85,11 +85,14 @@ let ticking = false;
 function updateParallax() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    
-        if (hero) {
+
+    if (hero) {
+        const parallaxElement = hero.querySelector('::before');
+        if (parallaxElement) {
             hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
-    
+    }
+
     ticking = false;
 }
 
@@ -129,7 +132,7 @@ if (ctaBtn) {
         const rect = ctaBtn.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         ctaBtn.style.setProperty('--mouse-x', `${x}px`);
         ctaBtn.style.setProperty('--mouse-y', `${y}px`);
     });
@@ -139,7 +142,7 @@ if (ctaBtn) {
 function initMobileNav() {
     const nav = document.querySelector('.nav');
     const header = document.querySelector('.header');
-    
+
     // Add mobile menu button if screen is small
     if (window.innerWidth <= 768 && !document.querySelector('.mobile-menu-btn')) {
         const menuBtn = document.createElement('button');
@@ -153,9 +156,9 @@ function initMobileNav() {
             color: var(--primary-orange);
             cursor: pointer;
         `;
-        
+
         header.querySelector('.header-content').appendChild(menuBtn);
-        
+
         menuBtn.addEventListener('click', () => {
             nav.classList.toggle('mobile-active');
         });
@@ -173,7 +176,7 @@ const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLef
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode = konamiCode.slice(-10);
-    
+
     if (konamiCode.join(',') === konamiPattern.join(',')) {
         // Easter egg activated!
         document.body.style.animation = 'rainbow 2s linear infinite';
